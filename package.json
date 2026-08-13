@@ -1,0 +1,27 @@
+{
+  "name": "veloura",
+  "version": "1.0.0",
+  "description": "Veloura - A modern full-stack clothing e-commerce website (Men, Women, Kids, Infants)",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "seed": "node server/seed/seedProducts.js"
+  },
+  "keywords": ["ecommerce", "clothing", "fashion", "mern", "veloura"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "razorpay": "^2.9.4",
+    "express-validator": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

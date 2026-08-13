@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Veloura | Elevate Your Everyday Style</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===================== TOAST ===================== -->
+<div id="toast" class="toast"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="navbar" id="navbar">
+  <div class="nav-top container">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="#" class="logo" data-page="home">VELOURA</a>
+
+    <div class="nav-search">
+      <input type="text" id="navSearchInput" placeholder="Search for clothes, brands..." />
+      <button id="navSearchBtn" aria-label="Search">🔍</button>
+    </div>
+
+    <div class="nav-icons">
+      <button class="icon-btn" id="accountBtn" title="Account">
+        <span>👤</span>
+      </button>
+      <button class="icon-btn" id="wishlistBtn" title="Wishlist" data-page="wishlist">
+        <span>♡</span>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" title="Cart" data-page="cart">
+        <span>🛍</span>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#" data-page="home">Home</a>
+    <a href="#" data-page="shop" data-category="">Shop</a>
+    <a href="#" data-page="shop" data-category="Men">Men</a>
+    <a href="#" data-page="shop" data-category="Women">Women</a>
+    <a href="#" data-page="shop" data-category="Kids">Kids</a>
+    <a href="#" data-page="shop" data-category="Infants">Infants</a>
+    <a href="#" data-page="about">About</a>
+    <a href="#" data-page="contact">Contact</a>
+  </nav>
+</header>
+
+<main id="app">
+
+  <!-- ===================== HOME PAGE ===================== -->
+  <section class="page" id="page-home">
+    <div class="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">NEW SEASON ARRIVALS</p>
+        <h1>Elevate Your<br/>Everyday Style</h1>
+        <p class="hero-sub">Discover premium fashion for Men, Women, Kids &amp; Infants — curated for every moment.</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary" data-page="shop" data-category="">Shop Now</button>
+          <button class="btn btn-outline" id="exploreBtn">Explore Collection</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="categorySection">
+      <h2 class="section-title">Featured Categories</h2>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section alt-bg">
+      <div class="section-head">
+        <h2 class="section-title">Trending Products</h2>
+        <button class="link-btn" data-page="shop" data-category="">View All →</button>
+      </div>
+      <div class="product-grid" id="trendingGrid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">New Arrivals</h2>
+        <button class="link-btn" data-page="shop" data-category="">View All →</button>
+      </div>
+      <div class="product-grid" id="newArrivalsGrid"></div>
+    </section>
+
+    <section class="offer-banner section">
+      <div class="offer-box">
+        <h2>Special Offer</h2>
+        <p>Flat 30% off on your first order. Use code <strong>VELOURA30</strong> at checkout.</p>
+        <button class="btn btn-primary" data-page="shop" data-category="">Grab the Deal</button>
+      </div>
+    </section>
+
+    <section class="section alt-bg">
+      <h2 class="section-title">Why Choose Veloura</h2>
+      <div class="why-grid">
+        <div class="why-card"><span>🚚</span><h4>Fast Delivery</h4><p>Quick and reliable shipping across the country.</p></div>
+        <div class="why-card"><span>↩️</span><h4>Easy Returns</h4><p>Hassle-free 7-day return &amp; exchange policy.</p></div>
+        <div class="why-card"><span>🔒</span><h4>Secure Payments</h4><p>Your transactions are protected end-to-end.</p></div>
+        <div class="why-card"><span>✨</span><h4>Premium Quality</h4><p>Carefully curated fabrics and craftsmanship.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Customer Reviews</h2>
+      <div class="review-grid">
+        <div class="review-card"><div class="stars">★★★★★</div><p>"The fabric quality is amazing and the fit is perfect. Veloura is my go-to now."</p><span>— Ananya R.</span></div>
+        <div class="review-card"><div class="stars">★★★★★</div><p>"Fast delivery and the packaging felt so premium. Loved the hoodie!"</p><span>— Rohit K.</span></div>
+        <div class="review-card"><div class="stars">★★★★☆</div><p>"Great collection for kids too — my daughter loves her new dress."</p><span>— Sneha M.</span></div>
+      </div>
+    </section>
+
+    <section class="newsletter section">
+      <h2>Join the Veloura Circle</h2>
+      <p>Subscribe for early access to new drops and exclusive offers.</p>
+      <form id="newsletterForm" class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </section>
+  </section>
+
+  <!-- ===================== SHOP PAGE ===================== -->
+  <section class="page hidden" id="page-shop">
+    <div class="shop-header container">
+      <h1 id="shopTitle">Shop All</h1>
+      <p id="shopResultCount"></p>
+    </div>
+    <div class="shop-layout container">
+      <aside class="filters" id="filtersPanel">
+        <h3>Filters</h3>
+
+        <div class="filter-group">
+          <h4>Category</h4>
+          <div id="filterCategory" class="filter-options"></div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Subcategory</h4>
+          <div id="filterSubcategory" class="filter-options"></div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Price Range</h4>
+          <div class="price-inputs">
+            <input type="number" id="minPriceInput" placeholder="Min" />
+            <input type="number" id="maxPriceInput" placeholder="Max" />
+          </div>
+          <button class="btn btn-outline btn-sm" id="applyPriceBtn">Apply</button>
+        </div>
+
+        <button class="btn btn-outline btn-sm" id="clearFiltersBtn">Clear All Filters</button>
+      </aside>
+
+      <div class="shop-main">
+        <div class="shop-toolbar">
+          <button class="btn btn-outline btn-sm" id="mobileFilterToggle">Filters</button>
+          <select id="sortSelect">
+            <option value="">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating-desc">Rating: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+          </select>
+        </div>
+        <div class="product-grid" id="shopGrid"></div>
+        <div class="load-more-wrap">
+          <button class="btn btn-outline" id="loadMoreBtn">Load More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCT DETAILS PAGE ===================== -->
+  <section class="page hidden" id="page-product">
+    <div class="container" id="productDetailContent"></div>
+    <div class="section container">
+      <h2 class="section-title">You May Also Like</h2>
+      <div class="product-grid" id="relatedGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== CART PAGE ===================== -->
+  <section class="page hidden" id="page-cart">
+    <div class="container">
+      <h1>Your Cart</h1>
+      <div class="cart-layout" id="cartLayout"></div>
+    </div>
+  </section>
+
+  <!-- ===================== WISHLIST PAGE ===================== -->
+  <section class="page hidden" id="page-wishlist">
+    <div class="container">
+      <h1>Your Wishlist</h1>
+      <div class="product-grid" id="wishlistGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== LOGIN PAGE ===================== -->
+  <section class="page hidden" id="page-login">
+    <div class="auth-box container">
+      <h1>Login to Veloura</h1>
+      <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="loginEmail" required />
+        <label>Password</label>
+        <input type="password" id="loginPassword" required />
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <p class="auth-switch">Don't have an account? <a href="#" data-page="register">Register</a></p>
+      <p class="auth-hint">Admin demo: register normally, then set role "admin" on the user in MongoDB to access the admin panel.</p>
+    </div>
+  </section>
+
+  <!-- ===================== REGISTER PAGE ===================== -->
+  <section class="page hidden" id="page-register">
+    <div class="auth-box container">
+      <h1>Create Your Account</h1>
+      <form id="registerForm">
+        <label>Full Name</label>
+        <input type="text" id="regFullName" required />
+        <label>Email</label>
+        <input type="email" id="regEmail" required />
+        <label>Password</label>
+        <input type="password" id="regPassword" required minlength="6" />
+        <label>Confirm Password</label>
+        <input type="password" id="regConfirmPassword" required minlength="6" />
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+      </form>
+      <p class="auth-switch">Already have an account? <a href="#" data-page="login">Login</a></p>
+    </div>
+  </section>
+
+  <!-- ===================== ACCOUNT PAGE ===================== -->
+  <section class="page hidden" id="page-account">
+    <div class="container account-layout">
+      <aside class="account-sidebar">
+        <button class="account-tab active" data-tab="profile">Profile</button>
+        <button class="account-tab" data-tab="orders">My Orders</button>
+        <button class="account-tab" data-tab="wishlist">Wishlist</button>
+        <button class="account-tab" id="adminTabBtn" data-tab="admin" style="display:none;">Admin Panel</button>
+        <button class="account-tab logout-tab" id="logoutBtn">Logout</button>
+      </aside>
+      <div class="account-content" id="accountContent"></div>
+    </div>
+  </section>
+
+  <!-- ===================== CHECKOUT PAGE ===================== -->
+  <section class="page hidden" id="page-checkout">
+    <div class="container">
+      <h1>Checkout</h1>
+      <div class="checkout-layout" id="checkoutLayout"></div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT PAGE ===================== -->
+  <section class="page hidden" id="page-about">
+    <div class="container static-page">
+      <h1>About Veloura</h1>
+      <p>Veloura was founded with a simple idea: fashion should feel elevated, effortless, and accessible to everyone. From everyday basics to statement pieces, we curate clothing for Men, Women, Kids, and Infants that blends comfort with contemporary style.</p>
+      <p>This project was built as a demonstration full-stack e-commerce application showcasing product browsing, cart &amp; wishlist management, authentication, checkout, and a simple admin panel.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT PAGE ===================== -->
+  <section class="page hidden" id="page-contact">
+    <div class="container static-page">
+      <h1>Contact Us</h1>
+      <p>Have a question about your order or our products? Reach out to us anytime.</p>
+      <ul class="contact-list">
+        <li>📧 support@veloura.example</li>
+        <li>📞 +91 98765 43210</li>
+        <li>📍 Mumbai, Maharashtra, India</li>
+      </ul>
+      <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-grid container">
+    <div>
+      <h3 class="footer-logo">VELOURA</h3>
+      <p>Elevate Your Everyday Style. Premium fashion for the whole family.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <a href="#" data-page="shop" data-category="Men">Men</a>
+      <a href="#" data-page="shop" data-category="Women">Women</a>
+      <a href="#" data-page="shop" data-category="Kids">Kids</a>
+      <a href="#" data-page="shop" data-category="Infants">Infants</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#" data-page="about">About Us</a>
+      <a href="#" data-page="contact">Contact</a>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <a href="#" data-page="account">My Account</a>
+      <a href="#" data-page="cart">Cart</a>
+      <a href="#" data-page="wishlist">Wishlist</a>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 Veloura. All rights reserved. Built for demo purposes.</p>
+</footer>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/checkout.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
