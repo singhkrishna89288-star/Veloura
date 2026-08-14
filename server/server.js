@@ -7,7 +7,7 @@ dotenv.config({
   path: path.join(__dirname, '..', '..', '.env')
 });
 
-const connectDB = require('./db');
+const connectDB = require('../config/db');
 const Product = require('../models/Product');
 
 const products = [
