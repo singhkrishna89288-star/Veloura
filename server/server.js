@@ -1191,7 +1191,7 @@ const seedDB = async () => {
       `[Veloura] Successfully seeded ${products.length} products.`
     );
 
-    process.exit(0);
+    process.exit(1);
 
   } catch (err) {
     console.error('[Veloura] Seeding failed:', err.message);
